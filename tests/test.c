@@ -1,5 +1,6 @@
 // bldr: gcc -lm -o %:r %
 // bldr: ./%:r
+// bldr: rm %:r
 
 #include <stdio.h>
 #include <stdlib.h>
