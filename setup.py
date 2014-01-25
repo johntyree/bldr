@@ -9,7 +9,7 @@ setup(name='bldr',
       scripts=['bin/bldr'],
       author='John Tyree',
       author_email='johntyree@gmail.com',
-      license='GPL3+',
+      license='LGPL3+',
       url='http://github.com/johntyree/bldr',
       description="Helper for building simple programs",
       keywords="build compile",
@@ -17,7 +17,7 @@ setup(name='bldr',
       classifiers=[
           "Development Status :: 3 - Alpha",
           "License :: OSI Approved :: "
-          "GNU General Public License v3 or later (GPLv3+)",
+          "GNU Lesser General Public License v3 or later (LGPLv3+)",
           "Topic :: Utilities",  #FIXME
       ],
       )
