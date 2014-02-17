@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
 
-
 from __future__ import division
 
 import os
@@ -37,13 +36,13 @@ class bldr(object):
                 toks[i], ext = os.path.splitext(toks[i])
         return ' '.join(toks)
 
-
     def build(self):
         for cmd in self.cmds:
             print("bldr:", cmd)
             cmd = cmd.split()
             if subprocess.call(cmd):
                 return 1
+
 
 def main():
     b = bldr(open(sys.argv[1], 'r'))
