@@ -3,6 +3,9 @@
 
 from setuptools import setup
 
+with open('README.md')as f:
+    long_desc = f.read()
+
 setup(name='bldr',
       version='0.0.1',
       packages=['bldr'],
@@ -13,7 +16,7 @@ setup(name='bldr',
       url='http://github.com/johntyree/bldr',
       description="Helper for building simple programs",
       keywords="build compile",
-      long_description=open('README.md').read(),
+      long_description=long_desc,
       classifiers=[
           "Development Status :: 3 - Alpha",
           "License :: OSI Approved :: "
