@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 
-bldr_regex = re.compile(r'\s*bldr:\s*(.*)')
+bldr_regex = re.compile(r'^\s*\S*\s*bldr:\s*(.*)')
 
 
 class Bldr(object):
