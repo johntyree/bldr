@@ -11,7 +11,7 @@ import sys
 bldr_regex = re.compile(r'\s*bldr:\s*(.*)')
 
 
-class bldr(object):
+class Bldr(object):
 
     def __init__(self, fn):
         self.fn = fn
@@ -45,7 +45,7 @@ class bldr(object):
 
 
 def main():
-    b = bldr(open(sys.argv[1], 'r'))
+    b = Bldr(open(sys.argv[1], 'r'))
     b.build()
     return 0
 
