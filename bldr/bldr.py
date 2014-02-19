@@ -27,11 +27,11 @@ class Bldr(object):
         toks = cmd.split()
         for i, _ in enumerate(toks):
             t = toks[i]
-            if t.find('%') != -1:
-                toks[i] = self.fn.name
-            if t.find(':p') != -1:
+            if '%' in t:
+                toks[i] = toks[i].replace('%', self.fn.name)
+            if ':p' in t:
                 toks[i] = os.path.abspath(toks[i]).replace(':p', '')
-            if t.find(':r') != -1:
+            if ':r' in t:
                 toks[i].replace(':r', '')
                 toks[i], ext = os.path.splitext(toks[i])
         return ' '.join(toks)
