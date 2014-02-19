@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf8
 
-from __future__ import division
+from __future__ import division, print_function
 
 import os
 import re
