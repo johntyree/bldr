@@ -62,10 +62,13 @@ class Bldr(object):
 
     def build(self):
         for cmd in self.cmds:
-            cmd = cmd.split()
             print("bldr:", cmd)
-            if self.execute and subprocess.call(cmd):
-                return 1
+            cmd = cmd.split()
+            if self.execute:
+                if subprocess.call(cmd):
+                    return 1
+                return 0
+            return -1
 
 
 def main():
