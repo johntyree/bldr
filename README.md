@@ -1,5 +1,6 @@
-bldr
+bldr ![](https://travis-ci.org/johntyree/bldr.svg?branch=master)
 ====
+
 
 A very simple builder for sharing examples.
 
