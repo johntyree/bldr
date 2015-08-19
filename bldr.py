@@ -16,7 +16,7 @@ class Bldr(object):
     def __init__(self, f):
         self.f = f
         self.cmds = []
-        self.execute = True
+        self.debug = False
         for line in f:
             line = line.strip()
             match = bldr_regex.search(line)
@@ -32,8 +32,8 @@ class Bldr(object):
         toks = cmd.split()
         for i, _ in enumerate(toks):
             t = toks[i]
-            if t == 'disable':
-                self.execute = False
+            if t == 'debug':
+                self.debug = True
             if '%' in t:
                 toks[i] = toks[i].replace('%', self.f.name)
             if ':p' in t:
@@ -56,9 +56,11 @@ class Bldr(object):
         for cmd in self.cmds:
             print("bldr:", cmd)
             cmd = cmd.split()
-            if self.execute:
-                if subprocess.call(cmd):
-                    return 1
+            if not self.debug:
+                try:
+                    subprocess.check_call(cmd)
+                except subprocess.CalledProcessError as e:
+                    return e.returncode
                 return 0
             return -1
 

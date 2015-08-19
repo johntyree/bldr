@@ -1,4 +1,3 @@
-// bldr: disable
 // bldr: gcc -lm -o %:r %
 // bldr: %:r
 // bldr: rm %:r

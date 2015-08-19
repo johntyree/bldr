@@ -51,10 +51,10 @@ class TestBldr(unittest.TestCase):
 
     def test_disable(self):
         self.init(u"""
-            # bldr: disable
+            # bldr: debug
             # bldr: true
         """)
-        self.assertFalse(self.b.execute)
+        self.assertTrue(self.b.debug)
         self.assertEqual(self.b.build(), -1)
 
 
