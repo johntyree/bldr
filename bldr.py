@@ -1,13 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding: utf8
-# bldr: disable
-# bldr: echo %
-# bldr: echo %:p
-# bldr: echo %:h
-# bldr: echo %:p:h
-# bldr: echo %:t
-# bldr: echo %:r
-# bldr: echo %:e
 
 from __future__ import division, print_function
 
