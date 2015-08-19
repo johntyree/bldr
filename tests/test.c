@@ -8,6 +8,6 @@
 #include <assert.h>
 
 int main() {
-    printf("%f\n", sin(M_PI_4));
+    printf("SUCCESS %f\n", sin(M_PI_4));
     return 0;
 }

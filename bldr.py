@@ -21,7 +21,6 @@ class Bldr(object):
             line = line.strip()
             match = bldr_regex.search(line)
             if match:
-                print(match.group(1))
                 cmd = self.clean_cmd(match.group(1))
                 self.cmds.append(cmd)
             elif self.cmds:
@@ -53,16 +52,16 @@ class Bldr(object):
         return ' '.join(toks)
 
     def build(self):
+        if self.debug:
+            return -1
         for cmd in self.cmds:
             print("bldr:", cmd)
             cmd = cmd.split()
-            if not self.debug:
-                try:
-                    subprocess.check_call(cmd)
-                except subprocess.CalledProcessError as e:
-                    return e.returncode
-                return 0
-            return -1
+            try:
+                subprocess.check_call(cmd)
+            except subprocess.CalledProcessError as e:
+                return e.returncode
+        return 0
 
 
 def main():
