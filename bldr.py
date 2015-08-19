@@ -67,8 +67,7 @@ class Bldr(object):
 
 def main():
     b = Bldr(open(sys.argv[1], 'r'))
-    b.build()
-    return 0
+    return b.build()
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

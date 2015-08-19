@@ -57,6 +57,13 @@ class TestBldr(unittest.TestCase):
         self.assertTrue(self.b.debug)
         self.assertEqual(self.b.build(), -1)
 
+    def test_returncode(self):
+        self.init(u"""
+            # bldr: false
+        """)
+        self.assertFalse(self.b.debug)
+        self.assertEqual(self.b.build(), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
