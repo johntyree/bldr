@@ -17,7 +17,7 @@ setup(name='bldr',
       long_description=long_desc,
       py_modules=['bldr'],
       entry_points={
-          'console_scripts': ['bldr = bldr.bldr:main'],
+          'console_scripts': ['bldr = bldr:main'],
           },
       classifiers=[
           "Development Status :: 3 - Alpha",
