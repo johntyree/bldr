@@ -21,11 +21,11 @@ bldr_regex = re.compile(r'^\s*\S*\s*bldr:\s*(.*)')
 
 class Bldr(object):
 
-    def __init__(self, fn):
-        self.fn = fn
+    def __init__(self, f):
+        self.f = f
         self.cmds = []
         self.execute = True
-        for line in fn:
+        for line in f:
             line = line.strip()
             match = bldr_regex.search(line)
             if match:
@@ -43,7 +43,7 @@ class Bldr(object):
             if t == 'disable':
                 self.execute = False
             if '%' in t:
-                toks[i] = toks[i].replace('%', self.fn.name)
+                toks[i] = toks[i].replace('%', self.f.name)
             if ':p' in t:
                 toks[i] = os.path.abspath(toks[i]).replace(':p', '')
             if ':h' in t:
