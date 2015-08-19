@@ -9,7 +9,7 @@ from os.path import abspath, dirname, basename, splitext
 from bldr import Bldr
 
 
-TEMPLATE = "# bldr: {}"
+TEMPLATE = u"# bldr: {}"
 
 EXPANSIONS = {
     '%': __file__,
@@ -39,7 +39,7 @@ class TestBldr(unittest.TestCase):
             self.assertEqual(result, expected)
 
     def test_contiguous(self):
-        self.init("""
+        self.init(u"""
             # bldr: whatever
             # bldr: ok man %
             # not bldr
@@ -50,7 +50,7 @@ class TestBldr(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_disable(self):
-        self.init("""
+        self.init(u"""
             # bldr: disable
             # bldr: true
         """)
